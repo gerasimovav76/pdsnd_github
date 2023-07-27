@@ -8,7 +8,7 @@ Bikeshare USA Udacity Project
 The project provides some insights regarding bikeshare in USA in Chicago, New York and Washington
 
 ### Files used
-bikeshare.py - python code
+bikeshare.py - python code;
 chacago.csv, new_york_city.csv, washington.csv - source datasets
 
 ### Credits
