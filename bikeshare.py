@@ -6,7 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_filters():
+def get_userdata():
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -78,8 +78,7 @@ def load_data(city, month, day):
     # filter by day of week if applicable
     if day != 'all':
         # filter by day of week to create the new dataframe
-        df = df[df['day_of_week'] == day.title()]
-    
+        df = df[df['day_of_week'] == day.title()]    
     return df
 
 
@@ -103,7 +102,7 @@ def time_stats(df):
     common_hour = df['Start Time'].dt.hour.mode()[0]
     print("The most common start hour is:", common_hour)
 
-
+    # print time consuming
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -113,7 +112,6 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-
 
     # display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
@@ -127,7 +125,7 @@ def station_stats(df):
     frequent_trip = df.groupby(['Start Station', 'End Station']).size().idxmax()
     print("The most frequent combination of start station and end station trip is:", frequent_trip)
 
-
+    # print time consuming
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -146,7 +144,7 @@ def trip_duration_stats(df):
     mean_travel_time = df['Trip Duration'].mean()
     print("Mean travel time: {} seconds".format(mean_travel_time))
 
-
+    # print time consuming
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -182,13 +180,13 @@ def user_stats(df):
     else:
         print("\nBirth year information is not available.")
 
-
+    # print time consuming
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def main():
     while True:
-        city, month, day = get_filters()
+        city, month, day = get_userdata()
         df = load_data(city, month, day)
 
         time_stats(df)
