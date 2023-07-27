@@ -83,7 +83,7 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    # displays statistics on the most frequent times of travel
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -108,7 +108,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    # displays statistics on the most popular stations and trip.
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -131,7 +131,7 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    # displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -150,17 +150,17 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    # displays statistics on bikeshare users."""
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types
+    # display counts of user types
     user_types = df['User Type'].value_counts()
     print("Counts of user types:")
     print(user_types)
 
-    # Display counts of gender
+    # display counts of gender
     if 'Gender' in df:
         gender_counts = df['Gender'].value_counts()
         print("\nCounts of gender:")
@@ -168,7 +168,7 @@ def user_stats(df):
     else:
         print("\nGender information is not available.")
 
-    # Display earliest, most recent, and most common year of birth
+    # display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         earliest_birth_year = df['Birth Year'].min()
         most_recent_birth_year = df['Birth Year'].max()
