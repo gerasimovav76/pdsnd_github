@@ -2,7 +2,7 @@
 7/27/2023
 
 ### Project Title
-Bikeshare Udacity Project
+Bikeshare USA Udacity Project
 
 ### Description
 The project provides some insights regarding bikeshare in USA
